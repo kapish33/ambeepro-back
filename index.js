@@ -47,6 +47,9 @@ app.use(limiter);
 app.use(hpp());
 
 app.use('/api/v1/table', tableApi);
+app.get('/', async (req, res) => {
+  res.status(200).json({ message: 'Welcome to Node.js & Express' });
+});
 
 app.use(notFound);
 app.use(errorHandler);
