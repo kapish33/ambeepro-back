@@ -6,7 +6,7 @@ const helmet = require('helmet');
 const xss = require('xss-clean');
 const rateLimit = require('express-rate-limit');
 const hpp = require('hpp');
-require('dotenv').config();
+
 import { json } from 'body-parser';
 import consola from 'consola';
 import morgan from 'morgan';
@@ -17,8 +17,6 @@ import { PORT } from './constants';
 import tableApi from './routes/table.route';
 
 const app = express();
-
-connectDB();
 
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
@@ -54,7 +52,8 @@ app.get('/', async (req, res) => {
 app.use(notFound);
 app.use(errorHandler);
 
-app.listen(process.env.PORT || PORT, () => {
+app.listen(PORT, async () => {
+  await connectDB();
   consola.success(`Server running on port ${PORT}`);
 });
 

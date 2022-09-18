@@ -3,12 +3,7 @@ import { DB } from '../constants';
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(DB, {
-      useNewUrlParser: true,
-      useCreateIndex: true,
-      useFindAndModify: false,
-      useUnifiedTopology: true,
-    });
+    await mongoose.connect(DB);
     consola.success('mongoDB connected...');
   } catch (error) {
     consola.error(`unable to start the connection \n${error}`);
