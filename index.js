@@ -54,7 +54,7 @@ app.get('/', async (req, res) => {
 app.use(notFound);
 app.use(errorHandler);
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT || PORT, () => {
   consola.success(`Server running on port ${PORT}`);
 });
 
