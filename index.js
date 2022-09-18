@@ -54,7 +54,7 @@ app.get('/', async (req, res) => {
 app.use(notFound);
 app.use(errorHandler);
 
-app.listen(PORT || 3001, () => {
+app.listen(PORT, () => {
   consola.success(`Server running on port ${PORT}`);
 });
 
