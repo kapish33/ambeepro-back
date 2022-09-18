@@ -6,7 +6,7 @@ const helmet = require('helmet');
 const xss = require('xss-clean');
 const rateLimit = require('express-rate-limit');
 const hpp = require('hpp');
-
+require('dotenv').config();
 import { json } from 'body-parser';
 import consola from 'consola';
 import morgan from 'morgan';
