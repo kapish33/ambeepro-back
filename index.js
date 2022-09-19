@@ -7,14 +7,15 @@ const xss = require('xss-clean');
 const rateLimit = require('express-rate-limit');
 const hpp = require('hpp');
 
-import { json } from 'body-parser';
-import consola from 'consola';
-import morgan from 'morgan';
+const { json } = require('body-parser');
+const consola = require('consola');
+const morgan = require('morgan');
 
-import { notFound, errorHandler } from './middlewares/asyncHandler';
-import { PORT } from './constants';
+const { notFound, errorHandler } = require('./middlewares/asyncHandler');
+const { PORT } = require('./constants');
 
-import tableApi from './routes/table.route';
+// import tableApi from './routes/table.route';
+const tableApi = require('./routes/table.route');
 
 const app = express();
 

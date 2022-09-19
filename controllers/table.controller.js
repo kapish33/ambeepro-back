@@ -1,5 +1,5 @@
-import { Table } from '../models';
-import asyncHandler from 'express-async-handler';
+const { Table } = require('../models');
+const asyncHandler = require('express-async-handler');
 
 // /**
 //  * @description Will Craete a New Entity
@@ -58,4 +58,4 @@ const updateEntity = asyncHandler(async (req, res) => {
     data: table,
   });
 });
-export { createEntity, getPaginatreEntries, updateEntity };
+module.exports = { createEntity, getPaginatreEntries, updateEntity };
